@@ -28,6 +28,27 @@
       font-size: 1.4rem;
       font-weight: bold;
     }
+
+    details {
+  margin: 5px 0;
+  font-family: Arial, sans-serif;
+}
+
+summary {
+  list-style: none;
+  font-size:25 px;
+  color: #6e41a4ff;
+}
+
+details[open] summary {
+  color: #6e41a4ff;
+}
+
+details p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #333;
+}
 </style>
     </head>
     <body style="background:#d5bcdb;">
@@ -75,6 +96,12 @@
             <div class="pt-1 mb-4">
               <button data-mdb-button-init data-mdb-ripple-init class="btn btn-info btn-lg btn-block" type="submit" style="background:#8f35ff;">Login</button>
             </div>
+              <div>
+  <center><details>
+    <summary>New User?</summary>
+    <p>Try Username: user & Password: User1234</p>
+  </details></center>
+</div>
 
             
 
@@ -98,4 +125,5 @@
         
         
     </body>
+
 </html>
