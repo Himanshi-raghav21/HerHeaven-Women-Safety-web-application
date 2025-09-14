@@ -401,34 +401,36 @@
     </div>
   </footer>
 
-  <script>
-    const track = document.getElementById("testimonialTrack");
-    const next = document.querySelector(".t-next");
-    const prev = document.querySelector(".t-prev");
-    let index = 0;
-    function updateCarousel() {
-      track.style.transform = `translateX(-${index * 100}%)`;
-    }
+   <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.getElementById("testimonialTrack");
+  const next = document.querySelector(".t-next");
+  const prev = document.querySelector(".t-prev");
+  let index = 0;
+
+  function updateCarousel() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+  }
+  if (next && prev && track) {
     next.onclick = () => { index = (index + 1) % track.children.length; updateCarousel(); };
     prev.onclick = () => { index = (index <= 0) ? track.children.length - 1 : index - 1; updateCarousel(); };
+  }
 
-  
-    const slides = document.querySelectorAll(".slideshow .slide");
-    let currentSlide = 0;
+  // 🔥 slideshow
+  const slides = document.querySelectorAll(".slideshow .slide");
+  let currentSlide = 0;
 
+  if (slides.length > 0) {
     setInterval(() => {
       slides[currentSlide].classList.remove("active");
       currentSlide = (currentSlide + 1) % slides.length;
       slides[currentSlide].classList.add("active");
-      }, 3000);
-
-      
-
-      
-
-  </script>
- 
+    }, 3000);
+  }
+});
+</script>
 
 
 </body>
 </html>
+
